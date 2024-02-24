@@ -1,0 +1,107 @@
+commit 308c0e41b80f9176013f672bb561937b8eacb659
+Author: Eduardo HF <90948381+EduardoHdzF@users.noreply.github.com>
+Date:   Sun Feb 18 23:46:50 2024 -0600
+
+    Update Script2.py
+
+commit aed55f75a92e00e395186b0c271bdbcdc888c6d9
+Author: EduardoHF <eduardohf@ciencias.unam.mx>
+Date:   Sun Feb 18 12:17:27 2024 -0600
+
+    Parte de caminante
+
+commit f24b5fee472d7b434380a9e08414e88ebba38b2b
+Author: EduardoHF <eduardohf@ciencias.unam.mx>
+Date:   Sun Feb 18 10:33:52 2024 -0600
+
+    biblioteca lista
+
+commit 84560226ca2fbfc83d6ccc37b19f902f2cf09777
+Author: EduardoHF <eduardohf@ciencias.unam.mx>
+Date:   Thu Feb 15 13:33:35 2024 -0600
+
+    matplot
+
+commit 7a2c0bfa3f0fac7a3825e481c2ea88d995a807ef
+Author: EduardoHF <eduardohf@ciencias.unam.mx>
+Date:   Thu Feb 15 00:25:32 2024 -0600
+
+    uff
+
+commit 92c5d5d0310023f1586333f7fa8b1bfc32910a72
+Author: EduardoHF <eduardohf@ciencias.unam.mx>
+Date:   Wed Feb 14 09:50:56 2024 -0600
+
+    falta representar sets
+
+commit be713d728814ef21a06f0a5d31c190d1c8dc342c
+Author: EduardoHF <eduardohf@ciencias.unam.mx>
+Date:   Wed Feb 14 07:46:17 2024 -0600
+
+    Menú de opciones Sc1
+
+commit 4ed2f4109026346496b5cb472f9385d8c986cd87
+Author: EduardoHF <eduardohf@ciencias.unam.mx>
+Date:   Tue Feb 13 22:54:08 2024 -0600
+
+    Parte de la puntuación lista
+
+commit 8cf569e9b7ff799318da610fe42864272651102c
+Author: EduardoHF <eduardohf@ciencias.unam.mx>
+Date:   Tue Feb 13 20:03:35 2024 -0600
+
+    base script1
+
+commit 5cd8e706c15baea1f658be1b083a3a4fc95fb28d
+Author: Fernando Fong <fernandofong@ciencias.unam.mx>
+Date:   Wed Jan 24 12:58:56 2024 -0600
+
+    Removing duplicate PDF
+
+commit 52a28e34b73a9913fe956769d89102d8438a5d6e
+Author: Fernando Fong <fernandofong@ciencias.unam.mx>
+Date:   Wed Jan 24 12:58:16 2024 -0600
+
+    Adding README.md
+
+commit eeb7f96146b80e9feba0b2e0424b18eb2c710817
+Author: Fernando Fong <fernandofong@ciencias.unam.mx>
+Date:   Wed Jan 24 12:56:08 2024 -0600
+
+    Agregando PDF
+
+commit 6520857d856872da08efb1244592f92879292644
+Author: Fernando Fong <fernandofong@ciencias.unam.mx>
+Date:   Wed Jan 24 12:53:40 2024 -0600
+
+    Adding PDF
+
+commit d328e3a71247588d0c93330a3d807f52598a985e
+Author: Fernando Fong <fernandofong@ciencias.unam.mx>
+Date:   Fri Jan 19 13:32:24 2024 -0600
+
+    Práctica 0 lista
+
+commit c7efe84de6f8918fe8555d3f7efd85c48ec56925
+Author: Fernando Fong <fernandofong@ciencias.unam.mx>
+Date:   Thu Jan 18 17:53:00 2024 -0600
+
+    Update README.md
+
+commit 70769eaa6e86d306f95902caa9d36e51c5f9697e
+Author: Fernando Fong <fernandofong@ciencias.unam.mx>
+Date:   Thu Jan 18 17:52:38 2024 -0600
+
+    Editando README.md
+
+commit ab7ce57c6c191e92465f0a23284e3ae54b3d549d
+Author: Fernando Fong <fernandofong@ciencias.unam.mx>
+Date:   Thu Jan 18 17:52:10 2024 -0600
+
+    Agregando README.md
+
+commit b0b15f3b4f9c4bc51c5d8436efe0ab65e91e541a
+Author: Fernando Fong <fernandofong@ciencias.unam.mx>
+Date:   Thu Jan 18 17:49:47 2024 -0600
+
+    Iniciando repositorio
