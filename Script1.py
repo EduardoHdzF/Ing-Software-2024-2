@@ -1,107 +1,90 @@
-from random import randint
 
-POINT_STR="Ingrese el ganador del punto:\n1\n2\n"
-ERROR_STR="Ingrese 1 o 2 exclusivamente"
-POINT_DCT={0:"0", 1:"15", 2:"30", 3:"40", 4:"Adv"}
+if __name__ == "__main__":
 
-
-if __name__ == '__main__':
-    #Primero necesito el nombre de los jugadores.
-    jug1, jug2 = input("Ingrese el nombre del Jugador 1\n"), input("Ingrese el nombre del jugador 2\n")
-    #Necesito llevar la cuenta de los sets que llevan ambos jugadores.
-    s1, s2 = 0, 0
-    #Anuncio que empieza el juego, que pueden empezar a jugar.
-    #Para esto, necesito empezar la cuenta de juegos y la cuenta de puntos.
-    j1, p1, j2, p2 = 0, 0, 0, 0
-    #Como se tiene que anunciar el saque, tengo que escoger un jugador
-    #al azar para que empieze a sacar.
-    if randint(0, 2) == 0:
-        saque = jug1
-    else:
-        saque = jug2
-    print(f"Empezará sacando: {saque}")
-    #Repetiré lo siguiente hasta que s1 o s2 == 2
-    game, sset = False, False
-    while s1 < 2 and s2 < 2:
+    print("--- Marcador de partido tennis ---")
+    
+    while True:        
         try:
-            point = int(input(POINT_STR)) #Que ingresen al ganador del punto.
-            if point == 1: #J1 hizo un punto.
-                #Si el J1 tiene puntos menores o iguales a 30, nada, p1++
-                if p1 <= 2:
-                    p1 += 1
-                elif p1 == 3: #Estoy en 40.
-                    if p2 == 4: #El marcador era 40-Adv.
-                        p2 -= 1
-                    elif p2 == 3: #El marcador era 40-40.
-                        p1 += 1
-                    else:
-                        #El j1 ha hecho un juego y debe de ser notificado.
-                        p1, p2 = 0, 0
-                        j1 += 1
-                        game = True
-                        print(f"Juego: {jug1}")
-                else: #Estoy en Adv y hago un punto, entonces juego automático.
-                    p1, p2 = 0, 0
-                    j1 += 1
-                    game = True
-                    print(f"Juego: {jug1}")
-            elif point == 2: #J2 hizo un punto, mismos casos pero en espejo.
-                if p2 <= 2:
-                    p2 += 1
-                elif p2 == 3: #Estoy en 40.
-                    if p1 == 4: #El marcador era 40-Adv.
-                        p1 -= 1
-                    elif p1 == 3: #El marcador era 40-40.
-                        p2 += 1
-                    else:
-                        #El j2 ha hecho un juego y debe de ser notificado.
-                        p1, p2 = 0, 0
-                        j2 += 1
-                        game = True
-                        print(f"Juego: {jug2}")
-                else: #Estoy en Adv y hago un punto, entonces juego automático.
-                    p1, p2 = 0, 0
-                    j2 += 1
-                    game = True
-                    print(f"Juego: {jug2}")
+            a = input(" Ingrese el nombre del jugador 1: ")
+            #print("\n El jugador 1 es ", a)
+            if a == "" or a == None:
+                raise Exception   
             else:
-                print(ERROR_STR)
-                continue
-            #Se termina de procesar el punto.
-            #ahora hay que anunciar el marcador.
-            if not game:
-                print(f"{jug1} {POINT_DCT[p1]} - {POINT_DCT[p2]} {jug2}")
+                break     
+        except Exception:
+            print("   No puede dejar el nombre vacío, intente de nuevo. ")
+
+    while True:
+        try:
+            b = input(" Ingrese el nombre del jugador 2: ")
+            #print("\n El jugador 2 es ", b)
+            if b == "" or b == None:
+                raise Exception
             else:
-                print(f"{jug1} {j1} - {j2} {jug2}")
-            #Como algún jugador pudo haber hecho un juego, usaremos una bandera
-            #para notificarlo
-            if game:
-                #Hay que hacer el cambio de saque.
-                if saque == jug1:
-                    saque = jug2
+                break       
+        except Exception:
+            print("   No puede dejar el nombre vacío, intente de nuevo. ")
+
+    print("\n --- El mejor de 3 sets gana --- ")
+
+    set = 0
+    e = 0
+    
+    while set < 3:
+        puntuacion1 = 0
+        puntuacion2 = 0
+        diferenciaJuegos = 0
+        juego1 = 1
+        juego2 = 1
+        maximo = 0
+
+        while True:
+            #Si tenemos 40-0, gana si e otro wey llega a 50, solo se aplica adv cuando van 40-40
+            if maximo >= 6 and diferenciaJuegos == 2:
+                break
+            while True:
+                try:
+                    print(f"\n ---------- \nLa puntuación actual es {a} {puntuacion1} - {puntuacion2} {b}\n ---------")
+                    print("\nIngrese el número que corresponda al jugador que ganó el punto: ")
+                    print(" El jugador 1 es ", a)
+                    print("\n El jugador 2 es ", b)
+                    c = int(input("-> "))
+                    if c > 2 or c < 0:
+                        raise Exception()
+                    break                
+                except Exception:
+                    print("-----\n Escriba una opción correcta por favor\n -----")
+          
+
+            if c == 1:
+                if puntuacion1 < 30:
+                    puntuacion1 += 15
                 else:
-                    saque = jug1
-                print(f"Saque: {saque}")
-                #Hay que verificar el cambio de cancha.
-                if (j1 + j2) % 2 == 1:
-                    print("Cambio de cancha")
-                #Alguien pudo haber hecho un set
-                if (j1 >= 6 or j2 >= 6) and abs(j1 - j2) >= 2:
-                    sset = True
-                game = False #Para no volver a hacer este procesamiento.
-            if sset: #Alguien hizo un set
-                if max(j1, j2) == j1: #J1 tiene la mayoría de juegos.
-                    s1 += 1
-                    print(f"Set: {jug1}")
+                    puntuacion1 += 10
+                juego1 += 1
+            else:
+                if puntuacion2 < 30:
+                    puntuacion2 += 15
                 else:
-                    s2 += 1
-                    print(f"Set: {jug2}")
-                print(f"{s1} sets a {s2}")
-                j1, j2 = 0, 0 #Se reinician los juegos.
-                sset = False #Para no volver a procesar esto
-        except ValueError:
-            print(ERROR_STR)
-    if s1 == 2:
-        print(f"Ganador: {jug1}")
-    else:
-        print(f"Ganador: {jug2}")
+                    puntuacion2 += 10
+                juego2 += 1
+            
+            diferenciaJuegos = abs(juego1-juego2)
+            print(juego1)
+            print(juego2)
+            print(diferenciaJuegos)
+            maximo = max(juego1,juego2)
+            """if puntuacion2 > 30:
+                puntuacion2 = "adv" """
+
+            #print(f"\n ---------- \nLa puntuación actual es {a} {puntuacion1} - {puntuacion2} {b} : ---------")
+            
+            #f += 1
+
+        if maximo == juego1:
+            print("\n-----\nEl set lo hace\n-----", a)
+        else:
+            print("\n-----\nEl set lo hace\n-----", b)
+        print(f"\n ---------- \nLa puntuación quedó {a} {puntuacion1} - {puntuacion2} {b} : ---------")
+        set += 1
+        
