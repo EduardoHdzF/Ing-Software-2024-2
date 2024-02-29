@@ -28,16 +28,17 @@ def agregaRenta(a, b, c):
         "INSERT INTO rentar (idUsuario, idPelicula, fecha_renta) VALUES (%s, %s, %s)", (a, b, c)
     )
 
-agregaUsuario("Yo Gomez","yo.com")
+def filtraApellidos(cond):
+    cursor.execute(
+        "SELECT * FROM usuarios WHERE nombre LIKE '% "+cond+"'"
+    )
+
+agregaUsuario("Yo Hernandeez","yo.com")
 agregaPelicula("La toalla del mojado","Terror")
 agregaRenta(13,"1",dt.date.today())
 
-def filtraApellidos():
-    cursor.execute(
-        "SELECT * FROM usuarios WHERE nombre LIKE '%mez'"
-    )
+cond = input("Ingrese la cadena con la que desea que el apallido del cliente finalice\n")
+filtraApellidos(cond)
 
 connection.commit()
 connection.close()
-
-
