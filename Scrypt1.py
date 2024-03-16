@@ -1,5 +1,6 @@
 import pymysql
 import datetime as dt
+
 connection = pymysql.connect(host='localhost',
                              user='lab',
                              password='Developer123!',
@@ -69,7 +70,21 @@ def cambiaGenero(nombre_pelicula, nuevo_genero):
     else:
         print(f"No se encontró ninguna película con el nombre '{nombre_pelicula}'.")
     
-    connection.close()
+    #connection.close()
+
+def eliminaRegistros():
+    connection = pymysql.connect(host='localhost',
+                             user='lab',
+                             password='Developer123!',
+                             database='lab_ing_software',
+                             charset='utf8mb4',
+                             cursorclass=pymysql.cursors.DictCursor)
+    cursor = connection.cursor()
+    fechaActual = dt.date.today()
+    cursor.execute(
+        "SELECT * FROM peliculas WHERE nombre = %s", nombre_pelicula
+    )
+
 
 
 cambiaGenero("verde","hombre")
