@@ -94,12 +94,17 @@ def eliminaRegistros():
                              cursorclass=pymysql.cursors.DictCursor)
     cursor = connection.cursor()
     fechaActual = dt.date.today()
+    dia = 5#fechaActual.day-3
     cursor.execute(
-        "SELECT * FROM rentar WHERE fecha_renta < '2024-03-%s'", fechaActual-3
+        "SELECT * FROM rentar WHERE fecha_renta < '2024-03-%s'", dia
     )
+    lista = cursor.fetchall()
+    for i in lista:
+        print(i)
     connection.commit()
     connection.close()
 
 
 cambiaGenero("verde","hombre")
 cambiaGenero("Conjuro","hombre")
+eliminaRegistros()
