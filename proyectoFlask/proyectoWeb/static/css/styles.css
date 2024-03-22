@@ -1,0 +1,16 @@
+.text-primary{
+  text-align: center;
+  color: black;
+  background-color: aquamarine;
+  font-size: x-large;
+  max-width: fit-content;
+  padding:1%;
+}
+.body-content{
+  display: flex;
+  justify-content: center;
+  margin: 8px;
+} 
+/* body{
+  background-color: blueviolet;
+} */
